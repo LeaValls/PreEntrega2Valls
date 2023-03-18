@@ -10,12 +10,12 @@ function NavBar () {
     return (
         <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home"><NavLink to={"/"}> EAMP </NavLink></Navbar.Brand>
+          <Navbar.Brand href="#home"><NavLink style={{ textDecoration: "none", color: "black" }} to={"/"}> EAMP </NavLink></Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home"><NavLink to ={"/category/blends"}> Blens de Té </NavLink></Nav.Link>
-            <Nav.Link href="#features"><NavLink to ={"/category/tisana"}> Tisanas </NavLink></Nav.Link>
-            <Nav.Link href="#pricing"><NavLink to ={"/category/tazones"}> Tazones </NavLink></Nav.Link>
-            <Nav.Link href="#pricing"><NavLink to ={"/category/difusor"}> Difusores </NavLink></Nav.Link>
+            <Nav.Link href="#home"><NavLink style={{ textDecoration: "none", color: "black" }} to ={"/category/blends"}>Blens de Té</NavLink></Nav.Link>
+            <Nav.Link href="#features"><NavLink style={{ textDecoration: "none", color: "black" }} to ={"/category/tisana"}>Tisanas</NavLink></Nav.Link>
+            <Nav.Link href="#pricing"><NavLink style={{ textDecoration: "none", color: "black" }} to ={"/category/tazones"}>Tazones</NavLink></Nav.Link>
+            <Nav.Link href="#pricing"><NavLink style={{ textDecoration: "none", color: "black" }} to ={"/category/difusor"}>Difusores</NavLink></Nav.Link>
           </Nav>
           <CardWidget />
         </Container>
