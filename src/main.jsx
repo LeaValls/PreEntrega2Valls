@@ -4,8 +4,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 
-import ItemRoot from "./routes/ItemRoot";
-import Root from "./routes/root";
+import ItemRoot from "./componentes/Routes/Item";
+import Root from "./componentes/Routes/Root";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 

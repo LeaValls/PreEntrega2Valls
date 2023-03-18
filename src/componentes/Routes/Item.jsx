@@ -1,10 +1,13 @@
-import NavBar from "../components/NavBar";
+import NavBar from "../NavBar";
+
+
 
 
 function ItemRoot() {
   return (
     <div>
       <NavBar />
+      
      
     </div>
   );

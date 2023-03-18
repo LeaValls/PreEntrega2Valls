@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
+import Products from "../../mocks/products";
 import ItemList from "../ItemList";
 
-
-
-import ItemList from "../ItemList";
-
-function ItemListContainer({ categoryId, isCategoryRoute }) {
+function ItemListContainer({ isCategoryRoute, categoryId }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -15,14 +12,13 @@ function ItemListContainer({ categoryId, isCategoryRoute }) {
 
     productsPromise
       .then((response) => {
-        if (isCategoryRoute) {
-          const productsFiltered = response.filter(
-            (product) => product.category === categoryId
-          );
-          setProducts(productsFiltered);
+        if(isCategoryRoute){
+          const productosFiltrados = response.filter ((product)=>product.category === categoryId);
+        setProducts (productosFiltrados);
         } else {
-          setProducts(response);
+          setProducts (response);
         }
+        
       })
       .catch((err) => console.log(err));
   }, [categoryId]);
