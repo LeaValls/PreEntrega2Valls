@@ -1,11 +1,11 @@
-import ItemCard from '../ItemCard';
+import ItemCard from "../ItemCard";
 
-function ItemDetail() {
+
+function ItemDetail({product}) {
     return (
-        <div>
-            <ItemCard />
-
-
+        <div >
+            <ItemCard product={product} />
+            
         </div>
     )
 }

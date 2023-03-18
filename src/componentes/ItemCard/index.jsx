@@ -1,15 +1,15 @@
-import Card from 'react-bootstrap/Card';
-
 function ItemCard (product){
 
 return (
+  <div className="container">
+            <div className="detalle">
+                <img className="imagenDeDetalle" src={product.image} />
+                <div className="descripcion">
+                    <h1>{product.name}</h1>
+                </div>
+            </div>
+        </div>
 
-<Card>
-<Card.Img variant="top" src= {product.image}/>
-<Card.Body>
-  <Card.Text>{product.description}</Card.Text>
-</Card.Body>
-</Card>
 )
 };
 

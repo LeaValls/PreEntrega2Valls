@@ -11,7 +11,7 @@ function ItemListContainer({ isCategoryRoute, categoryId }) {
     productsPromise
       .then((response) => {
         if(isCategoryRoute) {
-          const productosFiltrados = response.filter ((product) => product.category === categoryId);
+          const productosFiltrados = response.filter ((product) => product.category == categoryId);
         setProducts (productosFiltrados);
         } else {
           setProducts (response);
