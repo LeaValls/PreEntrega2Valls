@@ -1,14 +1,19 @@
-.menu {
-    background-color:bisque;
+.navbar {
     width: 100%;
-    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.lista{
+   
+  }
+  
+  .navbar > ul {
     display: flex;
     align-items: center;
     list-style: none;
     gap: 1rem;
+  }
+
+.Logo{
+  height: 70%;
+  width: 70%;
 }

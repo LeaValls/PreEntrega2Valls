@@ -1,26 +1,35 @@
-div.container{
-    display: flex;
-    align-items: center;
-    padding: 5rem;
-    margin: 5rem;
-}
+.container {
+  display: flex;
+  gap: 2rem;
+  padding-top: 2rem;
+  
+  
 
-div.detalle{
-    display: flex;
-    align-items: center;
-    padding: 5rem;
+
 
 }
 
-div.imagenDeDetalle{
-    display: flex;
-    align-items: center;
-    padding: 5rem;
-    margin: 10rem;
+.detalle {
+  display: flex;
+  flex-direction: column;
+  
+
+
+
 }
 
-div.descripcion{
-    display: flex;
-    align-items: center;
-    padding: 5rem;
+.imagenDeDetalle {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  width: 60%;
+
+
+}
+
+.descripcion {
+  display: flex;
+  gap: 5px;
+  margin-top: 0.5rem;
+
 }

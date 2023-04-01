@@ -1,4 +1,15 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount";
+import Button from 'react-bootstrap/Button';
+import "./ItemDetail.css";
+
 function ItemDetail({product}) {
+  const [added, setAdded] = useState (0);
+
+  function onAdd (count){
+    setAdded(count);
+  }
     return (
         <div className="container">
       <div className="detalle">
@@ -6,16 +17,26 @@ function ItemDetail({product}) {
         <div className="descripcion">
           <h1>{product.name}</h1>
         </div>
-        <div>
+        <div className="detalleproduct">
             <p>{product.detalle}</p>
         </div>
         <div>
-            <h3>{product.Precio}</h3>
+            <h3>Precio: {product.Precio}</h3>
+        </div>
+        <div>
+           <h5 className="stockproduct">Stock: {product.Stock}</h5>
+        </div>
+        <div>
+          {added == 0 && <ItemCount stock = {product.Stock} onAdd={onAdd}/>}
+          <div>
+            {added >= 1 &&(<Link to="/cart"><Button variant="dark">Terminar Compra</Button></Link>)}
+          </div>
         </div>
       </div>
     </div>
     )
 }
+
 
 
 

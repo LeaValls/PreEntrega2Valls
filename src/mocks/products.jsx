@@ -16,6 +16,7 @@ export default [
       Precio: "$1450",
       image: Product1,
       category:"blends",
+      Stock: 20,
       
     },
     {
@@ -26,6 +27,7 @@ export default [
       Precio: "$1550",
       image: Product2,
       category:"blends",
+      Stock: 20,
       
     },
     {
@@ -36,6 +38,7 @@ export default [
       Precio: "$1250",
       image: Product3,
       category:"tisana",
+      Stock: 10,
       
     },
     /*{
@@ -56,6 +59,7 @@ export default [
       Precio: "$1850",
       image: Product5,
       category:"tazones",
+      Stock: 10,
       
     },
     {
@@ -66,6 +70,7 @@ export default [
         Precio: "$2850",
         image: Product6,
         category:"difusor",
+        Stock: 30,
         
       },
 ];
