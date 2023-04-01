@@ -6,6 +6,7 @@ function Layaout (){
         <main>
             <NavBar />
             <Page />
+            
         </main>
     )
 }

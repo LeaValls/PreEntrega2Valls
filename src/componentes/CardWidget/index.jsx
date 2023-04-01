@@ -1,14 +1,18 @@
-
-
+import { useContext } from "react";
 import "./cardwidget.css";
+import { Context } from "../../context";
+import bolsa from "../../assets/images/bolsa.png"
 
 
 function CardWidget(){
+    const {productsAdded}=useContext(Context);
+
     return (
-    <div className="carrito">
-        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="" />
-        <span>5</span>
-    </div>
+    <button className="carrito">
+        <img src={bolsa} /> 
+        {productsAdded.length}
+        
+    </button>
     )
 }
 

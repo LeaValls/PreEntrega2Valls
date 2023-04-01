@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount";
 import Button from 'react-bootstrap/Button';
 import "./ItemDetail.css";
+import { Context } from "../../context";
 
 function ItemDetail({product}) {
+  const {onAdd} = useContext(Context);
   const [added, setAdded] = useState (0);
 
-  function onAdd (count){
+  function onAddProduct (count){
     setAdded(count);
+    onAdd(product, count);
   }
     return (
         <div className="container">
@@ -27,7 +30,7 @@ function ItemDetail({product}) {
            <h5 className="stockproduct">Stock: {product.Stock}</h5>
         </div>
         <div>
-          {added == 0 && <ItemCount stock = {product.Stock} onAdd={onAdd}/>}
+          {added == 0 && <ItemCount stock = {product.Stock} onAdd={onAddProduct}/>}
           <div>
             {added >= 1 &&(<Link to="/cart"><Button variant="dark">Terminar Compra</Button></Link>)}
           </div>
