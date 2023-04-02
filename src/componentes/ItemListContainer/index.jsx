@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import Products from "../../mocks/products";
 import ItemList from "../ItemList";
 
+
 function ItemListContainer({ isCategoryRoute, categoryId }) {
   const [products, setProducts] = useState([]);
+
+  
+  
 
   useEffect(() => {
     const productsPromise = new Promise((resolve, reject) => setTimeout(() => resolve(Products), 2000));
