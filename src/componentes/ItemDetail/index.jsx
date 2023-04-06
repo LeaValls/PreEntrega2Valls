@@ -24,7 +24,7 @@ function ItemDetail({product}) {
             <p>{product.detalle}</p>
         </div>
         <div>
-            <h3>Precio: {product.Precio}</h3>
+            <h3>Precio: ${product.Precio}</h3>
         </div>
         <div>
            <h5 className="stockproduct">Stock: {product.Stock}</h5>
@@ -32,7 +32,7 @@ function ItemDetail({product}) {
         <div>
           {added == 0 && <ItemCount stock = {product.Stock} onAdd={onAddProduct}/>}
           <div>
-            {added >= 1 &&(<Link to="/cart"><Button variant="dark">Terminar Compra</Button></Link>)}
+            {added >= 1 &&(<Link to="/Cart"><Button variant="dark">Terminar Compra</Button></Link>)}
           </div>
         </div>
       </div>
