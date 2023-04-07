@@ -5,34 +5,38 @@ export function CustomProvider({ children }) {
 
     const [productsAdded, setProductsAdded] = useState([]);
     function onAdd(product, quantity) {
-        const isAlreadyAdded = isInCart (product);
+        const isAlreadyAdded = isInCart(product);
 
-        if(isAlreadyAdded){
-            const productModify = productsAdded.find (productsAdded=>productsAdded.id ===product.id);
+        if (isAlreadyAdded) {
+            const productModify = productsAdded.find((productsAdded) => productsAdded.id === product.id);
 
             const productModified = {
                 ...productModify,
                 quantity: productModify.quantity + quantity
             };
 
-            setProductsAdded((prevState) =>prevState.map((productsAdded)=>productsAdded.id ===product.id ? productModified : productsAdded));
+            setProductsAdded((prevState) => prevState.map((productsAdded) => productsAdded.id === product.id ? productModified : productsAdded));
 
-        } else{
-            setProductsAdded((prevState) => prevState.concat({...product, quantity}));
+        } else {
+            setProductsAdded((prevState) => prevState.concat({ ...product, quantity }));
         }
-
-
-
-
-        
     }
 
-    function isInCart (product){
-        return productsAdded.some ((productsAdded)=>productsAdded.id === product.id)
-    }
+    const removeItem = (itemId) => {
+        const find = itemsAdded.filter((item) => item.id !== id);
+		setItemsAdded(find);
+    };
+    const clearCart = () => {
+		setItemsAdded([]);
+	};
 
+    function isInCart(product) {
+        return productsAdded.some((productsAdded) => productsAdded.id === product.id);
+    };
 
     return (
-        <Context.Provider value={{ productsAdded, onAdd }}>{children}</Context.Provider>
+        <Context.Provider value={{ productsAdded, onAdd }}>
+            {children}
+        </Context.Provider>
     );
 }

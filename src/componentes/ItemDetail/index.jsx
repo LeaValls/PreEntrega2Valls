@@ -1,43 +1,50 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount";
-import Button from 'react-bootstrap/Button';
-import "./ItemDetail.css";
 import { Context } from "../../context";
+import Button from 'react-bootstrap/Button';
+import ItemCount from "../ItemCount";
+import "./ItemDetail.css";
 
-function ItemDetail({product}) {
-  const {onAdd} = useContext(Context);
-  const [added, setAdded] = useState (0);
 
-  function onAddProduct (count){
+
+function ItemDetail({ product }) {
+  const { onAdd } = useContext(Context);
+  const [added, setAdded] = useState(0);
+
+
+
+  function onAddProduct(count) {
     setAdded(count);
     onAdd(product, count);
   }
-    return (
-        <div className="container">
+  console.log (product);
+
+  return (
+    <div className="container">
       <div className="detalle">
         <img className="imagenDeDetalle" src={product.image} />
         <div className="descripcion">
-          <h1>{product.name}</h1>
+          <h1>{product.title}</h1>
         </div>
         <div className="detalleproduct">
-            <p>{product.detalle}</p>
+          <p>{product.detalle}</p>
         </div>
         <div>
-            <h3>Precio: ${product.Precio}</h3>
+          <h3>Precio: ${product.precio}</h3>
         </div>
         <div>
-           <h5 className="stockproduct">Stock: {product.Stock}</h5>
+          <h5 className="stockproduct">Stock: {product.stock}</h5>
         </div>
+
         <div>
-          {added == 0 && <ItemCount stock = {product.Stock} onAdd={onAddProduct}/>}
+          {added == 0 && <ItemCount stock={product.stock} onAdd={onAddProduct} />}
           <div>
-            {added >= 1 &&(<Link to="/Cart"><Button variant="dark">Terminar Compra</Button></Link>)}
+            {added >= 1 && (<Link to="/cart"><Button variant="dark">Terminar Compra</Button></Link>)}
           </div>
         </div>
       </div>
     </div>
-    )
+  )
 }
 
 

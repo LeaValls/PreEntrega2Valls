@@ -3,6 +3,8 @@ import Card from 'react-bootstrap/Card';
 import {NavLink} from 'react-router-dom';
 
 function Item({product}) {
+
+  
     return (
           <Card style={{ width: "18rem" }}>
           <NavLink to ={`/item/${product.id}`}style={{ textDecoration: "none", color: "black" }}><Card.Img variant="bottom" src={product.image} /></NavLink>
