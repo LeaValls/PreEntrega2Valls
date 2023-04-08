@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context";
-import Button from 'react-bootstrap/Button';
+import {Button} from 'react-bootstrap';
 import ItemCount from "../ItemCount";
 import "./ItemDetail.css";
 
@@ -11,18 +11,15 @@ function ItemDetail({ product }) {
   const { onAdd } = useContext(Context);
   const [added, setAdded] = useState(0);
 
-
-
   function onAddProduct(count) {
     setAdded(count);
     onAdd(product, count);
   }
-  console.log (product);
 
   return (
     <div className="container">
       <div className="detalle">
-        <img className="imagenDeDetalle" src={product.image} />
+      <img className="imagenDeDetalle" src={product.image} />
         <div className="descripcion">
           <h1>{product.title}</h1>
         </div>

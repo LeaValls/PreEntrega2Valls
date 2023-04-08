@@ -1,6 +1,6 @@
   import {addDoc, collection, doc, getFirestore, updateDoc} from "firebase/firestore";
   import { useContext } from "react";
-  import { Container } from "react-bootstrap";
+  import { Button, Container } from "react-bootstrap";
   import { Context } from "../../context";
   
   function Cart() {
@@ -50,7 +50,7 @@
           </div>
         ))}
   
-        <button onClick={sendOrder}>Pagar</button>
+        <Button variant="dark" style={{ textDecoration: "none", color: "ligth"}} onClick={sendOrder}>Pagar</Button>
       </Container>
     );
   }
