@@ -1,0 +1,10 @@
+.route-container{
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+    flex-direction: column;
+}
+
+div.product-car{
+    display: flex;
+}

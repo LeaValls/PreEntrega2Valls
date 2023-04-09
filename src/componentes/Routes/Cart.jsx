@@ -2,6 +2,8 @@
   import { useContext } from "react";
   import { Button, Container } from "react-bootstrap";
   import { Context } from "../../context";
+
+  
   
   function Cart() {
     const { productsAdded } = useContext(Context);
@@ -39,16 +41,26 @@
         })
         .catch((error) => console.log({ error }));
     }
+
+    
+
+    
   
     return (
-      <Container className="route-container">
+      <Container style={"display: flex"} className="route-container">
         {productsAdded.map((product) => (
-          <div>
-            <span>Name: {product.title}</span>
+          <div className="product-car">
+            <img src={product.image} />
             <br />
-            <span>Quantity: {product.quantity}</span>
-          </div>
+            <span>Nombre: {product.title}</span>
+            <br />
+            <span>Cantidad: {product.quantity}</span>
+            <br />
+            <span>Precio: {product.precio}</span>
+            </div>
         ))}
+
+        
   
         <Button variant="dark" style={{ textDecoration: "none", color: "ligth"}} onClick={sendOrder}>Pagar</Button>
       </Container>

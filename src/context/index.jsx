@@ -22,6 +22,8 @@ export function CustomProvider({ children }) {
         }
     }
 
+    
+
     const removeItem = (itemId) => {
         const find = itemsAdded.filter((item) => item.id !== id);
 		setItemsAdded(find);
@@ -35,7 +37,7 @@ export function CustomProvider({ children }) {
     };
 
     return (
-        <Context.Provider value={{ productsAdded, onAdd }}>
+        <Context.Provider value={{ productsAdded, onAdd, removeItem, clearCart }}>
             {children}
         </Context.Provider>
     );
