@@ -1,23 +1,30 @@
-import React from "react";
-import "./itemCart.css";
-import { context } from "../../context";
+import { useContext } from "react";
+import { Context } from "../../context";
+import "./ItemCart.css";
 
 
-const ItemCart = ({product})=>{
-    const {removeItem} = context ();
+export const CartItem = ({ product }) => {
+  
+  const { removeItem } = useContext(Context);
 
-    return (
-        <div className="itemCart">
-            <img src={product.image} alt={product.name} />
-            <div>
-                <p>Nombre: {product.name}</p>
-                <p>Cantidad: {product.quantity}</p>
-                <p>Precio: {product.precio}</p>
-                <p>Total: ${product.quantity * product.precio} </p>
-                <Button onClick={() => removeItem(product.id)} >Eliminar</Button>
-            </div>
+  return (
+    <div className="container">
+      <div className="cartItem-container">
+        <img className="cartItem-img" src={product.img} alt={product.name} />
+        <div className="cartItem-info">
+          <div className="cartItem-title">{product.name}</div>
+          <div className="cartItem-quantityPrice">
+            ${product.price.toLocaleString()} x {product.quantity} u = $
+            {(product.price * product.quantity).toLocaleString()}
+          </div>
         </div>
-    )
-}
-
-export default ItemCart
+        <div className="cartItem-options">
+          <div onClick={() => removeItem(product)} className="p-5">
+            <IoTrashOutline className="trash-icon" />
+          </div>
+        </div>
+      </div>
+      <div className="terminarCompra-container "></div>
+    </div>
+  );
+};

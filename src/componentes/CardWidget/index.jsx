@@ -14,7 +14,6 @@ function CardWidget() {
             <Button className="carrito" variant="light">
                 <img src={bolsa} />
                 {productsAdded.length}
-
             </Button>
             </Link>
             );

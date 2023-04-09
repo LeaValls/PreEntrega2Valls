@@ -25,9 +25,11 @@ export function CustomProvider({ children }) {
     
 
     const removeItem = (itemId) => {
-        const find = itemsAdded.filter((item) => item.id !== id);
-		setItemsAdded(find);
-    };
+        const removeProduct = productsAdded.filter(
+          (productsAdded) => productsAdded.id !== itemId.id
+        );
+        setProductsAdded([...removeProduct]);
+      };
     const clearCart = () => {
 		setItemsAdded([]);
 	};
@@ -36,8 +38,16 @@ export function CustomProvider({ children }) {
         return productsAdded.some((productsAdded) => productsAdded.id === product.id);
     };
 
+    const totalPrice = () => {
+        const totalPriceProducts = productsAdded.reduce(
+          (accum, product) => (accum += product.quantity * product.price),
+          0
+        );
+        return totalPriceProducts;
+      };
+
     return (
-        <Context.Provider value={{ productsAdded, onAdd, removeItem, clearCart }}>
+        <Context.Provider value={{ productsAdded, onAdd, removeItem, clearCart, totalPrice, }}>
             {children}
         </Context.Provider>
     );

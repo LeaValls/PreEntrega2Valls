@@ -10,6 +10,7 @@ import Cart from "./componentes/Routes/Cart";
 import ItemRoot from "./componentes/Routes/Item";
 import Root from "./componentes/Routes/Root";
 import Layaout from "./componentes/Layout";
+import Checkout from "./componentes/checkout";
 
 
 const firebaseConfig = {
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/checkout",
-        element: <div>Hello world!</div>,
+        element: <Checkout />,
       },
     ],
   },

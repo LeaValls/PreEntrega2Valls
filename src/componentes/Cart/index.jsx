@@ -1,9 +1,11 @@
-import {addDoc, collection, doc, getFirestore, updateDoc} from "firebase/firestore";
+  import {addDoc, collection, doc, getFirestore, updateDoc} from "firebase/firestore";
   import { useContext } from "react";
   import { Button, Container } from "react-bootstrap";
+  import { NavLink } from "react-router-dom";
   import { Context } from "../../context";
+  import "./Cart.css";
   
-  function Cart() {
+  function CartComponent() {
     const { productsAdded } = useContext(Context);
     const db = getFirestore();
   
@@ -55,15 +57,13 @@ import {addDoc, collection, doc, getFirestore, updateDoc} from "firebase/firesto
             <span>Precio: {product.precio}</span>
             </div>
         ))}
-
-        <div>
-        <span>Total: $ {sendOrder}</span>
-        </div>
+        
+        
+        <NavLink to ={"/checkout"}><Button variant="dark" style={{ textDecoration: "none"}}>Checkout</Button></NavLink>
   
-        <Button variant="dark" style={{ textDecoration: "none", color: "ligth"}} onClick={sendOrder}>Pagar</Button>
+        
       </Container>
     );
   }
   
-  export default Cart;
-
+  export default CartComponent;
