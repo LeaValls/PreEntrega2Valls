@@ -47,7 +47,7 @@
     
   
     return (
-      <Container style={"display: flex"} className="route-container">
+      <Container className="route-container">
         {productsAdded.map((product) => (
           <div className="product-car">
             <img src={product.image} />
